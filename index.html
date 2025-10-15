@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpotiFácil (Edu)</title>
+  <link rel="stylesheet" href="estilo.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <h1><img src="logo.png" id="logo" alt="logo" /></h1>
+    <div class="server-input">
+      <input id="serverUrl" type="url" placeholder="URL do servidor Flask (ex.: http://SEU-IP)"
+        autocomplete="off" spellcheck="false" />
+      <button id="connectBtn" type="button">Conectar</button>
+    </div>
+  </header>
+
+  <!-- Player -->
+  <div class="player">
+    <!-- Capa -->
+    <img id="musica" src="fundo.png" alt="Capa da música">
+
+    <!-- Barra de progresso -->
+    <div class="progress-container">
+      <span id="current-time">0:00</span>
+      <input type="range" id="progress-bar" value="0" min="0" max="100">
+      <span id="duration">0:00</span>
+      <i class="fa-solid fa-heart"></i>
+    </div>
+
+    <!-- Controles -->
+    <div class="controls">
+      <button id="btnShuffle"><i class="fas fa-random"></i></button>
+      <button id="btnRepeat"><i class="fas fa-redo"></i></button>
+      <button id="btnPrev"><i class="fas fa-backward"></i></button>
+      <button id="btnPlayPause"><i class="fas fa-play"></i></button>
+      <button id="btnNext"><i class="fas fa-forward"></i></button>
+    </div>
+
+    <!-- Áudio real (oculto) -->
+    <audio id="audio" preload="metadata" src="be happy.mp3"></audio>
+  </div>
+
+  <div class="player02">
+    <h1>SOUNDWAVE</h1>
+    <div id="status" aria-live="polite"></div>
+    <ul id="songList"></ul>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+
+</html>
